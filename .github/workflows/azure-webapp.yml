@@ -1,4 +1,4 @@
-name: Build and Deploy Flask App to Azure Web App - mlops-flask-webapp02
+name: Build and Deploy Flask App to Azure Web App - labuser17-webapp
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.12'
 
     - name: Install dependencies
       run: |
@@ -26,6 +26,6 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'mlops-flask-webapp02'
+        app-name: 'labuser17-webapp'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
         package: .
